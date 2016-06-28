@@ -19,8 +19,8 @@ class Fixnum
         inputNumber = inputNumber.%(100000)
       end
 
-      if (inputNumber./(10000)).>(0)
-        word.concat(numbers.fetch((inputNumber./(10000)).floor().*(10)))
+      if (inputNumber./(10000)).>(2)
+      word.concat(numbers.fetch((inputNumber./(10000)).*(10).floor()))
       word.concat(" ")
       inputNumber = inputNumber.%(10000)
 

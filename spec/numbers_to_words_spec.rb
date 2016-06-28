@@ -16,6 +16,10 @@ describe ("Fixnum#numbers_to_words") do
     expect(10235.translate()).to(eq("ten thousand two hundred thirty five"))
   end
 
+  it ("returns thousands, hundreds, tens and units") do
+    expect(19235.translate()).to(eq("nineteen thousand two hundred thirty five"))
+  end
+
   it ("returns millions, thousands, hundreds, tens and units") do
     expect(10010235.translate()).to(eq("ten million ten thousand two hundred thirty five"))
   end
