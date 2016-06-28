@@ -13,10 +13,26 @@ class Fixnum
         inputNumber = inputNumber.%(1000000)
       end
 
+      if (inputNumber./(100000)).>(0)
+        word.concat(numbers.fetch((inputNumber./(100000)).floor()))
+        word.concat(" hundred ")
+        inputNumber = inputNumber.%(100000)
+      end
+
+      if (inputNumber./(10000)).>(0)
+        word.concat(numbers.fetch((inputNumber./(10000)).floor().*(10)))
+      word.concat(" ")
+      inputNumber = inputNumber.%(10000)
+
+      end
       if (inputNumber./(1000)).>(0)
         word.concat(numbers.fetch((inputNumber./(1000)).floor()))
-        word.concat(" thousand ")
+
         inputNumber = inputNumber.%(1000)
+      end
+
+      if self >= 1000
+        word.concat(" thousand ")
       end
 
       if (inputNumber./(100)).>(0)
